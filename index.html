@@ -3,21 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/e5b105efe4.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./planet-earth.png" sizes="16x16" />
     <title>nature</title>
   </head>
   <body>
     <section class="showcase">
+      <div class="toggle">
+        <i class="fas fa-bars"></i><i class="fas fa-times hide"></i>
+      </div>
       <div class="overlay"></div>
       <video
         class="video"
-        src="https://drive.google.com/file/d/1-LWI26CONBEjbpQ-_YOWYxerPGgMmGCC/view?usp=sharing"
+        src="./video.mp4"
         autoplay
         loop
         muted
       ></video>
       <div class="text">
-        <h3>Nature</h3>
+        <h3>Nature.org</h3>
         <h1>Never Stop</h1>
         <h1>Exploring The World</h1>
         <p>
@@ -27,7 +35,34 @@
           aliquip ex ea commodo consequat.
         </p>
         <a href="#">Explore Now</a>
+        <div class="footer">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
       </div>
     </section>
+    <div class="menu hide">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Destination</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <script>
+      const toggleIcons = document.querySelector(".toggle");
+      const hamburger = document.querySelector(".fa-bars");
+      const close = document.querySelector(".fa-times");
+      const sidebar = document.querySelector(".showcase");
+      const menuList = document.querySelector(".menu");
+      toggleIcons.addEventListener("click", () => {
+        sidebar.classList.toggle("move");
+        menuList.classList.toggle("hide");
+        hamburger.classList.toggle("hide");
+        close.classList.toggle("hide");
+      });
+    </script>
   </body>
 </html>
